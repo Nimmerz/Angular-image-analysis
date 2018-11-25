@@ -1,4 +1,15 @@
-
-<input type="text" [(ngModel)]="imageUrl">
-<button (click)="getPicture(imageUrl)">Check image</button>
-{{imageData | json}}
+<div class="main-block__analyze">
+  <div class="main-block__analyze--first">
+    <img class="main-block__analyze--frame"
+         alt="Your current image"
+         [src]="current_url"
+         onerror="this.src='http://pluspng.com/img-png/loader-png-loader-loading-progress-wait-icon-512.png'">
+    <input class="main-block__analyze--input" type="text" [(ngModel)]="imageUrl">
+    <button class="main-block__analyze--button" (click)="getPicture(imageUrl)">Check image</button>
+  </div>
+  <div class="main-block__analyze--second">
+      <pre>
+        {{imageData | json}}
+      </pre>
+  </div>
+</div>
